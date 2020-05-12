@@ -1,7 +1,26 @@
 <resources>
     <string name="app_name">PaperApp</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="privacy">Нажимая получить код, вы соглашаетесь Соглашением об условиях доставки и Политикой обработки персональных данных</string>
+    <string name="main_tab_title_subscriptions">Подписки</string>
+    <string name="main_tab_title_map">Карты</string>
+    <string name="main_tab_title_lists">Списки</string>
+    <string name="main_tab_title_profile">Профиль</string>
+    <string name="login_email_confirm_title">Готово!</string>
+    <string name="login_email_confirm_text">Выслали кнопку для входа на %1$s. Если письмо не пришло - проверьте папку спам, возможно оно попало туда.</string>
+    <string name="login_email_confirm_check_email">Проверить почту</string>
+    <string name="login_email_confirm_send_one_more_time">Отправить ещё раз</string>
+    <string name="login_email_confirm_change_email">Изменить email</string>
+    <string name="login_email_fail_retry">Попробовать ещё раз</string>
+    <string name="login_email_fail_resend">Отправить новую ссылку</string>
+    <string name="login_email_fail_title">Не удалось :(</string>
+    <string name="login_email_fail_text">Нам не удалось завершить регистрацию по ссылке. Проверьте подключение к интернету и попробуйте еще раз или запросите новую ссылку если с подключением все в порядке.</string>
+    <string name="login_social_text">Приложение с заметками о местах \nи событиях от ваших друзей.</string>
+    <string name="login_social_button_as_guest">Войти позже  ></string>
+    <string name="login_social_button_via_email">Войти через email</string>
+    <string name="login_social_button_fb">Войти с помощью Facebook</string>
+    <string name="login_social_button_google">Войти с помощью Google</string>
+    <string name="login_social_button_vk">Войти с помощью VK</string>
+    <string name="login_email_form_hint">Ваш email</string>
+    <string name="login_email_form_text">Пожалуйста, используйте ваш настоящий email. Туда мы вышлем письмо с кнопкой для входа в приложение</string>
+    <string name="login_email_form_button">Готово</string>
+    
 </resources>

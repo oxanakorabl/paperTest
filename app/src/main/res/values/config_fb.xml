@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ToDo: move to dev config -->
+    <string name="facebook_app_id">0000000000</string>
+    <string name="fb_login_protocol_scheme">0000000000</string>
+</resources>

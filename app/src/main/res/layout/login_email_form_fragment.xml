@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="viewmodel"
+            type="com.paperapp.ui.login.email.form.LoginEmailFormViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_bg"
+        android:padding="16dp"
+        tools:context=".ui.login.email.form.LoginEmailFormFragment">
+
+        <Button
+            android:id="@+id/login_email_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:drawableEnd="@drawable/ic_cross"
+            android:onClick="@{() -> viewmodel.close()}"
+            android:padding="8dp"
+            android:layout_marginTop="32dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_width="32dp"
+            android:layout_height="32dp" />
+
+        <TextView
+            android:textSize="20sp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/white"
+            android:id="@+id/login_email_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/login_social_button_via_email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_email_close"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/login_email_text"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/white_60"
+            android:text="@string/login_email_form_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_email_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/login_email_input_layout"
+            android:layout_width="match_parent"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_marginTop="16dp"
+            app:error="@{viewmodel.error}"
+            app:hintTextAppearance="@style/MyHintStyle"
+            android:background="@drawable/bg_login_email_input"
+            android:textColorHint="@color/white_30"
+            android:layout_marginHorizontal="2dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_email_text"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/login_email_input"
+                android:hint="@string/login_email_form_hint"
+                android:background="@android:color/transparent"
+                android:textCursorDrawable="@null"
+                android:text="@={viewmodel.emailAddressField}"
+                android:inputType="textEmailAddress"
+                android:selectAllOnFocus="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/login_email_button"
+            style="@style/GreenButton"
+            android:layout_marginTop="8dp"
+            android:padding="0dp"
+            android:layout_width="0dp"
+            android:text="@string/login_email_form_button"
+
+            android:onClick="@{() -> viewmodel.loginViaEmail()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_email_input_layout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

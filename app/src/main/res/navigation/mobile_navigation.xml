@@ -3,23 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_subscriptions">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.paper.paperapp.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_subscriptions"
+        android:name="com.paperapp.ui.subscriptions.SubscriptionsFragment"
+        android:label="@string/main_tab_title_subscriptions"
+        tools:layout="@layout/fragment_subscriptions" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.paper.paperapp.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_lists"
+        android:name="com.paperapp.ui.lists.ListsFragment"
+        android:label="@string/main_tab_title_lists"
+        tools:layout="@layout/fragment_map" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.paper.paperapp.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_map"
+        android:name="com.paperapp.ui.map.MapFragment"
+        android:label="@string/main_tab_title_map"
+        tools:layout="@layout/fragment_map" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.paperapp.ui.profile.ProfileFragment"
+        android:label="@string/main_tab_title_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_graph.xml"
+    app:startDestination="@+id/navigation_login_social">
+
+    <fragment
+        android:id="@+id/navigation_login_social"
+        android:name="com.paperapp.ui.login.social.LoginSocialFragment"
+        android:label="SocialLogin"
+        tools:layout="@layout/login_social_fragment">
+
+        <action
+            android:id="@+id/action_navigation_login_social_to_login_email_form"
+            app:destination="@id/navigation_login_email_form" />
+
+        <action
+            android:id="@+id/action_navigation_login_social_to_login_email_fail"
+            app:destination="@id/navigation_login_email_fail" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_login_email_form"
+        android:name="com.paperapp.ui.login.email.form.LoginEmailFormFragment"
+        android:label="EmailLoginForm"
+        tools:layout="@layout/login_email_form_fragment">
+
+        <action
+            android:id="@+id/action_navigation_login_email_form_to_login_social"
+            app:destination="@id/navigation_login_social" />
+
+        <action
+            android:id="@+id/action_navigation_login_email_form_to_login_email_confirm"
+            app:destination="@id/navigation_login_email_confirm" />
+
+        <action
+            android:id="@+id/action_navigation_login_email_form_to_login_email_fail"
+            app:destination="@id/navigation_login_email_fail" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_login_email_fail"
+        android:name="com.paperapp.ui.login.email.fail.LoginEmailFailFragment"
+        android:label="EmailLogin"
+        tools:layout="@layout/login_email_fail_fragment">
+
+        <!-- When user clicks try again -->
+        <action
+            android:id="@+id/action_navigation_login_email_fail_to_login_email_form"
+            app:destination="@id/navigation_login_email_form" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_login_email_confirm"
+        android:name="com.paperapp.ui.login.email.confirm.LoginEmailConfirmFragment"
+        android:label="EmailLogin"
+        tools:layout="@layout/login_email_confirm_fragment">
+
+        <!-- When user requests to change the email -->
+        <action
+            android:id="@+id/action_navigation_login_email_confirm_to_login_email_form"
+            app:destination="@id/navigation_login_email_form" />
+
+        <!-- When user requests a new mail -->
+        <action
+            android:id="@+id/action_navigation_login_email_confirm_to_login_email_confirm"
+            app:destination="@id/navigation_login_email_confirm" />
+
+    </fragment>
+
+</navigation>

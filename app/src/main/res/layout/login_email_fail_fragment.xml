@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.paperapp.ui.login.email.fail.LoginEmailFailViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_bg"
+        android:padding="16dp"
+        tools:context=".ui.login.email.confirm.LoginEmailConfirmFragment">
+
+        <Button
+            android:id="@+id/login_email_confirm_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:drawableEnd="@drawable/ic_cross"
+            android:onClick="@{() -> viewmodel.close()}"
+            android:padding="8dp"
+            android:layout_marginTop="32dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_width="32dp"
+            android:layout_height="32dp" />
+
+        <TextView
+            android:textSize="20sp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/white"
+            android:id="@+id/login_email_fail_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/login_email_fail_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_email_confirm_close"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/login_email_fail_text"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/white_60"
+            android:text="@string/login_email_fail_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_email_fail_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/login_email_fail_retry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            style="@style/GreenButton"
+            android:onClick="@{() -> viewmodel.retry()}"
+            android:text="@string/login_email_fail_retry"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_email_fail_text" />
+
+        <Button
+            android:id="@+id/login_email_fail_resend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:background="?android:attr/selectableItemBackground"
+            android:textColor="@color/white_60"
+            android:layout_marginTop="16dp"
+            android:onClick="@{() -> viewmodel.resend()}"
+            android:text="@string/login_email_fail_resend"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_email_fail_retry" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
